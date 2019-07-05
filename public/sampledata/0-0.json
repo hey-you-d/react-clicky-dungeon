@@ -1,0 +1,11 @@
+{
+    "area" : {
+        "id": "0-0",
+        "nextAreaId": "1-0",
+        "areaMap": [],
+        "areaEnemies": [],
+        "areaItems": [],
+        "areaEquipments": [],
+        "areaDoors": []
+    }   
+}
