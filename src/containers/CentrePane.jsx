@@ -12,9 +12,6 @@ import { setAttributePoint, setVitalStat } from '../actions';
 
 import { GLOBALCONST } from '../AppContext';
 
-// NOTE : Its okay if the parent component happens to be not a presentational component.
-// Check the ** footnote from this article (written by Redux creator himself) :
-// https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
 class CentrePane extends Component {
   static renderShopPane() {
     return <ShopPane />;
