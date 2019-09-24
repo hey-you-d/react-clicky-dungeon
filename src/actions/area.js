@@ -1,5 +1,3 @@
-// Haven't figured out how to test a 3rd party api fetch library, so let's just use the
-// default js fetch.
 //import fetch from 'cross-fetch';
 
 import { GLOBALCONST } from '../AppContext';
@@ -17,6 +15,7 @@ const receiveAreaData = (json, mode) => {
 
 // https://www.tjvantoll.com/2015/09/13/fetch-and-errors/
 const handleFetchErrors = response => {
+  console.log(response);
   if (!response.ok) {
     throw Error(response.statusText);
   }
@@ -27,22 +26,8 @@ const handleFetchErrors = response => {
 export const getNextArea = (nextAreaId, mode = GLOBALCONST.GET_NEXTAREA_MODE.DEFAULT) => {
   return (dispatch, getState) => {
     // API Call - GET request, return a Promise object
-    // const sampleJson = `${[process.env.PUBLIC_URL, '/sampledata/', nextAreaId].join('')}.json`;
-    const remoteJson = `${[
-      'http://clickydungeonmicroservice-env.k9r3ztp5em.ap-southeast-2.elasticbeanstalk.com/api/v1/areaInfo?p=',
-      nextAreaId
-    ].join('')}`;
-
-    return fetch(remoteJson, {
-      method: 'GET',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      redirect: 'error',
-      referrer: 'no-referrer',
-      credentials: 'include'
+    return fetch(`${[process.env.PUBLIC_URL, '/sampledata/', nextAreaId].join('')}.json`, {
+      credentials: 'same-origin'
     })
       .then(handleFetchErrors)
       .then(response => response.json())
@@ -83,8 +68,6 @@ export const getNextArea = (nextAreaId, mode = GLOBALCONST.GET_NEXTAREA_MODE.DEF
             }
           };
           dispatch(receiveAreaData(areaNotFound, GLOBALCONST.GET_NEXTAREA_MODE.RESTART_GAME));
-        } else {
-          console.log("OLALA");
         }
       });
   };
