@@ -28,7 +28,8 @@ class StartButton extends Component {
           <div className="col-12">
             <div className="start-button-container">
               {/* prettier-ignore */}
-              <button type="button" className="start-button" onClick={e => onClickHandler(e)}>START GAME</button>
+              <button type="button" className="start-button show-start-button" onClick={e => onClickHandler(e)}>START GAME</button>
+              <p className="hide-start-button">Loading...</p>
             </div>
           </div>
         </div>
