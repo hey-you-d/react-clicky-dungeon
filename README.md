@@ -1,6 +1,6 @@
 # Clicky Dungeon Prototype
 
-Live Demo URL: COMING SOON
+Live Demo URL: https://prod.d23cd5qsc8ogkn.amplifyapp.com/
 
 This is a Javascript project to demonstrate my knowledge in developing web apps with React.js.
 The project utilises Redux library for state management, among other popular 3rd party libraries
