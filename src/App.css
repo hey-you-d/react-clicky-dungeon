@@ -4,6 +4,8 @@
 .hidden-el { visibility: hidden; }
 .red-text { color: #ff0000; }
 .bgColour-black { background-color: #000000; }
+.hide-start-button { display: none; }
+.show-start-button { display: block; }
 
 /* ----- Sticky header & footer - ref: jsfiddle.net/naqE6/1 ----- */
 html, body, div#root { min-height: 100%; padding: 0; margin: 0; }
