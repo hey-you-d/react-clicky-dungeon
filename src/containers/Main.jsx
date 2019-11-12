@@ -28,6 +28,14 @@ class Main extends Component {
 
     this.lootedItemImg = React.createRef();
 
+    // TODO: Pass it to the StartButton component
+    /*
+    this.state = {
+      startBtnClassNames: 'start-button show-start-button',
+      loadingTxtClassNames: 'hide-start-button'
+    };
+    */
+
     this.inventoryShiftBtnHandler = this.inventoryShiftBtnHandler.bind(this);
     this.inventoryItemClickHandler = this.inventoryItemClickHandler.bind(this);
     this.startBtnClickEventHandler = this.startBtnClickEventHandler.bind(this);
@@ -43,6 +51,9 @@ class Main extends Component {
    */
   startBtnClickEventHandler(e) {
     e.preventDefault();
+
+    // TODO : hide the start button, show the loading animation
+
 
     const { DAPgetNextArea, SAPnextAreaId } = this.props;
     DAPgetNextArea(SAPnextAreaId);

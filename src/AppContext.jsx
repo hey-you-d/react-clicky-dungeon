@@ -241,6 +241,7 @@ const renderCreditMsg = () => {
 };
 
 export const GLOBALCONST = {
+  API_ENDPOINT: 'https://www.clickydungeon-msvc.ap-southeast-2.elasticbeanstalk.com/api/v1/',
   EPOCH_AREA_ID: AREA_ID.EPOCH,
   START_GAME_AREA_ID: AREA_ID.START,
   AREA_NOT_FOUND_ID: AREA_ID.NOT_FOUND,
