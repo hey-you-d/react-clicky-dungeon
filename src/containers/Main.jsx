@@ -28,13 +28,10 @@ class Main extends Component {
 
     this.lootedItemImg = React.createRef();
 
-    // TODO: Pass it to the StartButton component
-    /*
     this.state = {
       startBtnClassNames: 'start-button show-start-button',
       loadingTxtClassNames: 'hide-start-button'
     };
-    */
 
     this.inventoryShiftBtnHandler = this.inventoryShiftBtnHandler.bind(this);
     this.inventoryItemClickHandler = this.inventoryItemClickHandler.bind(this);
@@ -50,10 +47,21 @@ class Main extends Component {
    * *******************************************************************************************
    */
   startBtnClickEventHandler(e) {
+    const { startBtnClassNames } = this.state;
+
     e.preventDefault();
 
-    // TODO : hide the start button, show the loading animation
-
+    if (startBtnClassNames === 'start-button show-start-button') {
+      this.setState({
+        startBtnClassNames: 'start-button hide-start-button',
+        loadingTxtClassNames: 'show-start-button'
+      });
+    } else {
+      this.setState({
+        startBtnClassNames: 'start-button show-start-button',
+        loadingTxtClassNames: 'hide-start-button'
+      });
+    }
 
     const { DAPgetNextArea, SAPnextAreaId } = this.props;
     DAPgetNextArea(SAPnextAreaId);
@@ -397,12 +405,14 @@ class Main extends Component {
    */
   renderStartBtnPane() {
     const { setShowModalWindowStates, SAPcurrentAreaId } = this.props;
-
+    const { startBtnClassNames, loadingTxtClassNames } = this.state;
     return (
       <StartButton
         SAPcurrentAreaId={SAPcurrentAreaId}
         onClickHandler={this.startBtnClickEventHandler}
         setShowModalWindowStates={setShowModalWindowStates}
+        startBtnClassNames={startBtnClassNames}
+        loadingTxtClassNames={loadingTxtClassNames}
       />
     );
   }
