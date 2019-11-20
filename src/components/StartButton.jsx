@@ -20,7 +20,7 @@ class StartButton extends Component {
   }
 
   render() {
-    const { onClickHandler } = this.props;
+    const { onClickHandler, startBtnClassNames, loadingTxtClassNames } = this.props;
 
     return (
       <div className="container ingame-startbtn-container">
@@ -28,8 +28,8 @@ class StartButton extends Component {
           <div className="col-12">
             <div className="start-button-container">
               {/* prettier-ignore */}
-              <button type="button" className="start-button show-start-button" onClick={e => onClickHandler(e)}>START GAME</button>
-              <p className="hide-start-button">Loading...</p>
+              <button type="button" className={startBtnClassNames} onClick={e => onClickHandler(e)}>START GAME</button>
+              <p className={loadingTxtClassNames}>Loading...</p>
             </div>
           </div>
         </div>
@@ -43,7 +43,9 @@ StartButton.contextType = AppContext;
 StartButton.propTypes = {
   SAPcurrentAreaId: PropTypes.string.isRequired,
   onClickHandler: PropTypes.func.isRequired,
-  setShowModalWindowStates: PropTypes.func.isRequired
+  setShowModalWindowStates: PropTypes.func.isRequired,
+  startBtnClassNames: PropTypes.string.isRequired,
+  loadingTxtClassNames: PropTypes.string.isRequired
 };
 
 export default StartButton;
