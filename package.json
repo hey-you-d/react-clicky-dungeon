@@ -7,7 +7,7 @@
     "cross-fetch": "^3.0.2",
     "formik": "^1.5.7",
     "intersection-observer-polyfill": "^0.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
